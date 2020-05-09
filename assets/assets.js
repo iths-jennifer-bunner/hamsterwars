@@ -1,0 +1,1 @@
+//assets ska serva bilderna ex http.../assets/hamster-1.jpg
