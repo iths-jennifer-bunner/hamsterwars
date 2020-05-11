@@ -1,7 +1,6 @@
 const {Router} = require('express');
 const {db} = require('./../firebase');
 
-
 const router = new Router();
 
 router.get('/', async (req, res) => {

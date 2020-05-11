@@ -14,3 +14,24 @@
 
   // const db = firebase.firestore();
 
+  //slänga upp i firestore
+  const { db } = require("./../firebase");
+  const hamsters = require('./../data.json')
+
+  const jsonToFs = () => {
+    try {
+      hamsters.forEach((hamster)=> {
+        db.collection('hamsters').doc(hamster.id.toString()).set(hamster)
+          
+          .then(resp => {console.log('DB updated!')})
+          .catch(err => console.error(err))
+          
+          
+        })
+      }catch (err){
+        console.error(err);
+        
+      }
+  }
+
+  jsonToFs();
