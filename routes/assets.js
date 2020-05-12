@@ -1,18 +1,13 @@
 //assets ska serva bilder
 const { Router } = require("express");
 const router = new Router();
-const { auth, db } = require("./../firebase");
+// const { auth, db } = require("./../firebase");
 const fs = require("fs");
 
-router.get("/", async (req, res) => {
-    let images = [];
-
-    let snapShot = await db.collection('hamsters').get();
-
-    snapShot.forEach(doc => {
-        images.push(doc.data().imgName);
-    })
+router.get('/:img', async (req, res) => {
     
+    let image = fs.createReadStream(`./hamsters/${req.params.img}`)
+    image.pipe(res)
 })
 
 module.exports = router;
