@@ -1,7 +1,7 @@
 //assets ska serva bilder
 const { Router } = require("express");
 const router = new Router();
-// const { auth, db } = require("./../firebase");
+
 const fs = require("fs");
 
 router.get('/:img', async (req, res) => {

@@ -13,7 +13,10 @@ router.get('/total', async (req, res) => {
         })
     res.send({totalGames : numbers.length})
     }
-    catch(err){console.error(err)}
+    catch(err){res.status(500).send(err)}
 })
+
+
+
 
 module.exports = router;

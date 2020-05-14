@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
         })
         res.send('Db updated')
         }
-        catch(err){console.error(err)}
+        catch(err){res.status(500).send(err)}
 })
 
 //Get an array of all matchObjects
@@ -32,10 +32,11 @@ router.get('/', async (req, res) => {
         })
         res.send({games : games})
     }
-    catch(err){console.error(err)}
+    catch(err){res.status(500).send(err)}
 })
 
-//----------------------------//
+
+// to shorten the new Id number
 function generateId(length){
 
     let id = '';
@@ -51,5 +52,3 @@ function generateId(length){
 
 module.exports = router;
 
-
-//en put för varje hamser sen en post , bör lägga på frontend sidan

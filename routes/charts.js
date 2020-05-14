@@ -14,7 +14,7 @@ router.get('/top', async (req, res) => {
             })
         res.send(hamsters)
     }
-    catch(err){console.error(err)}    
+    catch(err){res.status(500).send(err)}    
 } )
 
 //Get bottom 5 
@@ -28,7 +28,7 @@ router.get('/bottom', async (req, res) => {
             })
         res.send(hamsters)
     }
-    catch(err){console.error(err)}    
+    catch(err){res.status(500).send(err)}    
 } )
 
 module.exports = router;
